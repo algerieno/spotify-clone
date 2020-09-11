@@ -1,0 +1,57 @@
+
+.header {
+    height: 60px;   
+    margin: 0 -30px;
+    padding: 0 30px;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.navigation_buttons button {
+    width: 32px;
+    height: 32px;
+    background-color: red;
+    border: none;
+    border-radius: 32px;
+    background-color: #2e2e2e;
+    margin-right: 16px;
+}
+
+.header .action_buttons {
+    margin-left: auto;
+}
+
+.action_buttons button {
+    background-color: #181818;
+    color: white;
+    font-size: 12px;
+}
+
+.header .profilebtn {
+    width: 105px;
+    height: 32px;
+    border-radius: 23px;
+    border: none;
+    margin-left: 16px;
+}
+
+.header .profilebtn:hover {
+    background-color: #282828;
+}
+
+.header .upgradebtn {    
+    width: 140px;
+    padding: 8px 34px;
+    text-transform: uppercase;
+    letter-spacing: 1.76px;
+    border-radius: 200px;
+    border: 1px solid #a4a4a4;
+}
+
+.header .upgradebtn:hover {
+    background-color: #000;
+    border: 1px solid white;
+    transform: scale(1.06);
+}

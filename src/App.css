@@ -1,38 +1,24 @@
+/* $mainbackcolor: #121212;
+$sidebarcolor: #040404;
+$cardcolor: #282828; */
+
+.outwrapper {
+    height: 100vh;
+    font-family: "Circular Spotify Tx T Black"
+}
+
 .App {
-  text-align: center;
+    height: calc(100vh - 90px);
+    background-color: #121212;
+    display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.musicplayer {
+    background-color: #282828;
+    height: 90px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
