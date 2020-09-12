@@ -3,22 +3,25 @@ $sidebarcolor: #040404;
 $cardcolor: #282828; */
 
 .outwrapper {
-    height: 100vh;
-    font-family: "Circular Spotify Tx T Black"
+  height: 100vh;
+  font-family: "Circular Spotify Tx T Black";
 }
 
 .App {
-    height: calc(100vh - 90px);
-    background-color: #121212;
-    display: flex;
+  height: calc(100vh - 90px);
+  background-color: #121212;
+  display: flex;
 }
 
 .musicplayer {
-    background-color: #282828;
-    height: 90px;
-    display: flex;
-    color: white;
-    justify-content: center;
-    align-items: center;
+  background-color: #282828;
+  height: 90px;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
 
+.unlogged * {
+  margin: 0;
+}
