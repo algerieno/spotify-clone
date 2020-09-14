@@ -72,8 +72,3 @@
 .right_icons .right_icon {
   cursor: pointer;
 }
-
-.green_icon,
-.right_icons * .MuiSlider-root {
-  color: #1ed15e;
-}

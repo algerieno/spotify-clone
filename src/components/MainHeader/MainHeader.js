@@ -20,7 +20,9 @@ const MainHeader = () => {
         </button>
       </div>
       <div className="action_buttons">
-        <button className="upgradebtn">Upgrade</button>
+        <button className="upgradebtn">
+          <strong>Upgrade</strong>
+        </button>
         <button className="profilebtn">
           <Avatar alt="Remy Sharp" src="" className="avatar_image" />
           <div className="profile_name">

@@ -1,12 +1,71 @@
 .Main {
-    width: 100%;
-    padding: 0 30px;
-    background-color: #505050;
+  width: 100%;
+  padding: 0 30px;
+  background: linear-gradient(#505050, #111);
+  overflow: auto;
 }
 
 .content {
-    background-color: teal;
-    height: calc(100% - 60px);
-    overflow: scroll;
+  min-height: 100%;
+  overflow: scroll;
 }
 
+.banner {
+  display: flex;
+  width: 100%;
+}
+
+.banner > img {
+  height: 232px;
+  margin-right: 30px;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+.header_album_info {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}
+
+.header_album_info h1 {
+  font-size: 92px;
+}
+
+.header_album_info p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.album_action_buttons {
+  display: flex;
+  color: white;
+  align-items: center;
+  padding: 24px 32px;
+}
+
+.album_action_buttons .MuiSvgIcon-root {
+  margin-right: 25px;
+  transition: all 200px ease-out;
+}
+
+.album_action_buttons .MuiSvgIcon-root:hover {
+  transform: scale(1.06);
+}
+
+.big_play_button {
+  font-size: 80px !important;
+}
+
+.big_play_button .MuiSvgIcon-root {
+  color: green;
+}
+
+.album_divider {
+  height: 1px;
+  background-color: #535353;
+  border: none;
+  margin-bottom: 20px;
+}
