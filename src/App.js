@@ -5,15 +5,50 @@ import Navbar from "./components/Navbar/Navbar";
 import Main from "./components/Main/Main";
 import LoginPage from "./components/LoginPage/LoginPage";
 import { getTokenFromUrl } from "./auth";
+import SpotifyWebApi from "spotify-web-api-js";
+import { useDataLayerValue } from "./utils/DataLayer";
+import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
+
+const spotify = new SpotifyWebApi();
 
 function App() {
-  const [token, setToken] = useState(null);
+  // const [token, setToken] = useState(null);
+  const [{ user, token, playlist }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const _token = hash.access_token;
-    _token ? setToken(_token) : console.log("authorization refused");
+    //_token = token;
+    if (_token) {
+      console.log(_token);
+      dispatch({
+        type: "SET_TOKEN",
+        payload: _token,
+      });
+
+      spotify.setAccessToken(_token);
+      spotify.getMe().then((user) => {
+        console.log(user);
+        if (user.images[0]) {
+          dispatch({
+            type: "SET_IMAGE",
+            payload: user.images[0].url,
+          });
+        }
+
+        dispatch({
+          type: "SET_USER",
+          payload: user.display_name,
+        });
+      });
+      spotify.getUserPlaylists().then((result) => {
+        dispatch({
+          type: "SET_PLAYLIST",
+          payload: result.items.map((item) => item.name),
+        });
+      });
+    }
   }, []);
 
   return (
@@ -29,7 +64,7 @@ function App() {
             <Main />
           </div>
           <div className="musicplayer">
-            <span>music player</span>
+            <MusicPlayer />
           </div>
         </div>
       )}

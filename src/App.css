@@ -13,15 +13,6 @@ $cardcolor: #282828; */
   display: flex;
 }
 
-.musicplayer {
-  background-color: #282828;
-  height: 90px;
-  display: flex;
-  color: white;
-  justify-content: center;
-  align-items: center;
-}
-
 .unlogged * {
   margin: 0;
 }

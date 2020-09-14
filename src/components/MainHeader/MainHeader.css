@@ -1,57 +1,87 @@
-
 .header {
-    height: 60px;   
-    margin: 0 -30px;
-    padding: 0 30px;
-    background-color: transparent;
-    color: white;
-    display: flex;
-    align-items: center;
+  height: 60px;
+  margin: 0 -30px;
+  padding: 0 30px;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.header button {
+  outline: none;
+}
+
+.navigation_buttons {
+  display: flex;
 }
 
 .navigation_buttons button {
-    width: 32px;
-    height: 32px;
-    background-color: red;
-    border: none;
-    border-radius: 32px;
-    background-color: #2e2e2e;
-    margin-right: 16px;
+  width: 32px;
+  height: 32px;
+  color: #bbb;
+  border: none;
+  border-radius: 32px;
+  background-color: #2e2e2e;
+  margin-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navigation_buttons button:hover {
+  background-color: #353535;
 }
 
 .header .action_buttons {
-    margin-left: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
 .action_buttons button {
-    background-color: #181818;
-    color: white;
-    font-size: 12px;
+  background-color: #181818;
+  color: white;
+  font-size: 12px;
 }
 
 .header .profilebtn {
-    width: 105px;
-    height: 32px;
-    border-radius: 23px;
-    border: none;
-    margin-left: 16px;
+  width: 105px;
+  height: 32px;
+  border-radius: 23px;
+  border: none;
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.profilebtn .avatar_image {
+  height: 24px;
+  width: 24px;
+}
+
+.profilebtn .profile_name {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .header .profilebtn:hover {
-    background-color: #282828;
+  background-color: #282828;
 }
 
-.header .upgradebtn {    
-    width: 140px;
-    padding: 8px 34px;
-    text-transform: uppercase;
-    letter-spacing: 1.76px;
-    border-radius: 200px;
-    border: 1px solid #a4a4a4;
+.header .upgradebtn {
+  width: 140px;
+  padding: 8px 34px;
+  text-transform: uppercase;
+  letter-spacing: 1.76px;
+  border-radius: 200px;
+  border: 1px solid #a4a4a4;
 }
 
 .header .upgradebtn:hover {
-    background-color: #000;
-    border: 1px solid white;
-    transform: scale(1.06);
+  background-color: #000;
+  border: 1px solid white;
+  transform: scale(1.06);
 }

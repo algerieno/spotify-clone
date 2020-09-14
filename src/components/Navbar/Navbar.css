@@ -6,6 +6,8 @@
   padding: 0 10px;
   display: flex;
   flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
 }
 
 .navbar .logo {
@@ -19,6 +21,8 @@ ul {
 }
 
 li {
+  display: flex;
+  align-items: center;
   padding: 10px 20px;
   border-radius: 4px;
   color: #b3b3b3;
@@ -50,6 +54,15 @@ li.active:hover {
   color: #b3b3b3;
   letter-spacing: 0.1em;
   padding: 10px 20px;
+  font-weight: bold;
+}
+
+.customPlaylists {
+  overflow: scroll;
+}
+
+.customPlaylists li {
+  font-weight: lighter;
 }
 
 .divider {
@@ -57,12 +70,17 @@ li.active:hover {
   height: 1px;
   background-color: #333;
   border: 0;
+  margin: 10px 0;
 }
 
 .installApp {
   margin-top: auto;
-  font-size: 14px;
-  line-height: 16px;
-  padding: 15px;
-  color: #b3b3b3;
+  margin-left: -15px;
+  transform: scale(0.9);
+  padding: 5px 0;
+  padding-bottom: 0;
+}
+
+.installApp * {
+  font-size: 16px;
 }
