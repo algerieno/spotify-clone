@@ -5,7 +5,7 @@ $cardcolor: #282828; */
 .outwrapper {
   height: 100vh;
   /* font-family: "Circular Spotify Tx T Black"; */
-  font-family: "Roboto", sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .App {
