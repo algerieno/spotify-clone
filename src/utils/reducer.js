@@ -4,8 +4,9 @@ export const initialState = {
   playlist: [],
   playing: false,
   item: null,
-  token:
-    "BQB8POEN2q7Rj4ft2iEcP1iIV3uR2iUq6_cv8PxKfF20eqG_R2sWA1X56lIEfSCpXnqqsWIlpPieQuuK7TUyI68qaSZTIkFM8Fjx5XBedjck7SYjjHKGIq0y9jQDldxrLUU7IONv2cT8HxnQKAq1cNzkMPjKQv7vLOjXM4jxh6Wdor_j",
+  token: null,
+  //album: null,
+  //"BQB8POEN2q7Rj4ft2iEcP1iIV3uR2iUq6_cv8PxKfF20eqG_R2sWA1X56lIEfSCpXnqqsWIlpPieQuuK7TUyI68qaSZTIkFM8Fjx5XBedjck7SYjjHKGIq0y9jQDldxrLUU7IONv2cT8HxnQKAq1cNzkMPjKQv7vLOjXM4jxh6Wdor_j",
 };
 
 const reducer = (state, action) => {
@@ -30,6 +31,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         profile_image: action.payload,
+      };
+    case "SET_ALBUM":
+      return {
+        ...state,
+        album: action.payload,
       };
     default:
       return state;

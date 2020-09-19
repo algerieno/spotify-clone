@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./MusicPlayer.css";
+import { spotify } from "../../App";
+
 import PlayCircleOutlineOutlinedIcon from "@material-ui/icons/PlayCircleOutlineOutlined";
 import SkipPreviousOutlinedIcon from "@material-ui/icons/SkipPreviousOutlined";
 import SkipNextOutlinedIcon from "@material-ui/icons/SkipNextOutlined";
@@ -29,7 +31,10 @@ const MusicPlayer = () => (
       <div className="center_icons">
         <ShuffleOutlinedIcon className="green_icon" />
         <SkipPreviousOutlinedIcon />
-        <PlayCircleOutlineOutlinedIcon fontSize="large" />
+        <PlayCircleOutlineOutlinedIcon
+          fontSize="large"
+          onClick={() => spotify.play()}
+        />
         <SkipNextOutlinedIcon />
         <RepeatOutlinedIcon className="green_icon" />
       </div>

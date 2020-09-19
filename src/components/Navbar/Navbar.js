@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Navbar.css";
 import SideBarOption from "./SideBarOption/SideBarOption";
-import { useDataLayerValue, userDataLaerValue } from "../../utils/DataLayer";
+import { useDataLayerValue } from "../../utils/DataLayer";
 
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
 import SearchIcon from "@material-ui/icons/Search";
@@ -13,6 +13,7 @@ import ArrowDropDownCircleOutlinedIcon from "@material-ui/icons/ArrowDropDownCir
 
 const Navbar = () => {
   const [{ playlist }] = useDataLayerValue();
+
   return (
     <div className="navbar">
       <div className="logo">

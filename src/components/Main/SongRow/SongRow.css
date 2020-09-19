@@ -1,7 +1,6 @@
 .songRow {
   color: #b3b3b3;
   display: flex;
-  font-family: Arial, Helvetica, sans-serif;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;

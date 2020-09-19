@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./Main.css";
 import MainHeader from "../MainHeader/MainHeader";
 import Card from "../Card/Card";
 import LoginPage from "../LoginPage/LoginPage";
 import SongRow from "./SongRow/SongRow";
+import { useDataLayerValue } from "../../utils/DataLayer";
 
 import PlayCircleFilledWhiteIcon from "@material-ui/icons/PlayCircleFilledWhite";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
 const Main = () => {
+  const [{ album }] = useDataLayerValue();
+  console.log(album);
+
   return (
     <div className="Main">
       <div className="mainHeader">
@@ -25,8 +29,8 @@ const Main = () => {
           />
 
           <div className="header_album_info">
-            <h4>PLAYLIST</h4>
-            <h1>Discover Weekly</h1>
+            <h4>{album?.album_type.toUpperCase()}</h4>
+            <h1>{album?.name}</h1>
             <p>
               Your weekly mixtape of fresh music. Enjoy new music and deep cuts
               picked for you. Updates every Monday.
@@ -46,11 +50,25 @@ const Main = () => {
         <hr className="album_divider" />
 
         <div className="ablum_playlist">
-          {Array(10)
+          {album?.tracks.items &&
+            album.tracks.items.map((item) => (
+              <SongRow
+                key={Math.random()}
+                title={item.name}
+                duration={item.duration_ms}
+                artist={item.artists
+                  .reduce((acc, art) => {
+                    return [...acc, art.name];
+                  }, [])
+                  .join(", ")}
+              />
+            ))}
+
+          {/* {Array(10)
             .fill(0)
             .map((item) => (
               <SongRow key={Math.random()} />
-            ))}
+            ))} */}
         </div>
       </div>
     </div>

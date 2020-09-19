@@ -9,11 +9,11 @@ import SpotifyWebApi from "spotify-web-api-js";
 import { useDataLayerValue } from "./utils/DataLayer";
 import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
 
-const spotify = new SpotifyWebApi();
+export const spotify = new SpotifyWebApi();
 
 function App() {
   // const [token, setToken] = useState(null);
-  const [{ user, token, playlist }, dispatch] = useDataLayerValue();
+  const [{ user, token, playlist, album }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -29,7 +29,7 @@ function App() {
 
       spotify.setAccessToken(_token);
       spotify.getMe().then((user) => {
-        console.log(user);
+        //console.log(user);
         if (user.images[0]) {
           dispatch({
             type: "SET_IMAGE",
@@ -46,6 +46,13 @@ function App() {
         dispatch({
           type: "SET_PLAYLIST",
           payload: result.items.map((item) => item.name),
+        });
+      });
+
+      spotify.getAlbum("5tKy8HZ7mRWib6Tuv54rcf").then((response) => {
+        dispatch({
+          type: "SET_ALBUM",
+          payload: response,
         });
       });
     }
