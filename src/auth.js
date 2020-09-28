@@ -3,12 +3,15 @@ export const auth = false;
 const AuthEndPoint = "https://accounts.spotify.com/authorize";
 const clienID = "2d485af578294da98ffde94fe379c5d4";
 const redirectUri = "https://algerieno.github.io/spotify-clone/";
+//const redirectUri = "http://localhost:3000/";
 const scopes = [
   "user-read-currently-playing",
   "user-read-recently-played",
   "user-read-playback-state",
   "user-top-read",
   "user-modify-playback-state",
+  "streaming",
+  "app-remote-control",
 ];
 
 export const loginUrl = `${AuthEndPoint}?redirect_uri=${redirectUri}&client_id=${clienID}&response_type=token&scope=${scopes.join(

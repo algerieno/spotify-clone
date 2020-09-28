@@ -10,10 +10,11 @@ import { useDataLayerValue } from "../../utils/DataLayer";
 import PlayCircleFilledWhiteIcon from "@material-ui/icons/PlayCircleFilledWhite";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import { spotify } from "../../App";
 
 const Main = () => {
   const [{ album }] = useDataLayerValue();
-  console.log(album);
+  const albumImg = album?.images[1].url;
 
   return (
     <div className="Main">
@@ -23,10 +24,7 @@ const Main = () => {
 
       <div className="content">
         <div className="banner">
-          <img
-            src="https://newjams-images.scdn.co/v2/discover-weekly/pOdnPTRma6KZzKPNRN9oUA==/bmVuZW5lbmVuZW5lbmVuZQ==/default"
-            alt=""
-          />
+          <img src={albumImg} alt="" />
 
           <div className="header_album_info">
             <h4>{album?.album_type.toUpperCase()}</h4>

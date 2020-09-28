@@ -49,13 +49,18 @@ function App() {
         });
       });
 
-      spotify.getAlbum("5tKy8HZ7mRWib6Tuv54rcf").then((response) => {
+      spotify.getAlbum("3HNnxK7NgLXbDoxRZxNWiR").then((response) => {
         dispatch({
           type: "SET_ALBUM",
           payload: response,
         });
       });
     }
+    // spotify.play({
+    //   context_uri: `spotify:playlist:37i9dQZF1E4ppGtqqkuRvH`,
+    // });
+
+    spotify.getMyDevices().then((r) => console.log(r));
   }, []);
 
   return (
