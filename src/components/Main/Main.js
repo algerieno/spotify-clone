@@ -53,6 +53,7 @@ const Main = () => {
               <SongRow
                 key={Math.random()}
                 title={item.name}
+                img={albumImg}
                 duration={item.duration_ms}
                 artist={item.artists
                   .reduce((acc, art) => {

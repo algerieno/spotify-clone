@@ -1,7 +1,7 @@
 import React from "react";
 import "./SongRow.css";
 
-function SongRow({ title, artist, duration }) {
+function SongRow({ title, artist, duration, img }) {
   const getDuration = (timems) => {
     const mins = timems / 60000;
     const secs = Math.floor((timems - Math.floor(mins) * 60000) / 1000);
@@ -12,10 +12,7 @@ function SongRow({ title, artist, duration }) {
     <div className="songRow">
       <div className="song_title">
         <div className="song_image">
-          <img
-            src="https://newjams-images.scdn.co/v2/discover-weekly/pOdnPTRma6KZzKPNRN9oUA==/bmVuZW5lbmVuZW5lbmVuZQ==/default"
-            alt=""
-          />
+          <img src={img} alt="" />
         </div>
         <div className="song_description">
           <h3>{title}</h3>
@@ -25,7 +22,9 @@ function SongRow({ title, artist, duration }) {
 
       {/* <div className="album_name">S.L.N Boys</div> */}
       <div className="song_time">{`${getDuration(duration)[0]}:${
-        getDuration(duration)[1]
+        getDuration(duration)[1] < 10
+          ? `0${getDuration(duration)[1]}`
+          : getDuration(duration)[1]
       }`}</div>
     </div>
   );
